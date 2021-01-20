@@ -118,6 +118,11 @@ set(SHADER_FILES
     renderer_opengl/texture_filters/xbrz/xbrz_freescale.vert
 )
 
+set(distribution_DIR ${CMAKE_SOURCE_DIR}/distribution)
+add_library(lib_leia_sdk STATIC IMPORTED)
+set_target_properties(lib_leia_sdk PROPERTIES IMPORTED_LOCATION
+        ​${distribution_DIR}/leia_sdk/lib/​${ANDROID_ABI}/libleiasdk.so)
+
 include(${CMAKE_CURRENT_SOURCE_DIR}/generate_shaders.cmake)
 
 foreach(shader_file ${SHADER_FILES})

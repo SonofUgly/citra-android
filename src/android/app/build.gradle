@@ -88,6 +88,12 @@ android {
             path "../../../CMakeLists.txt"
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['./../../distribution/leia_sdk/lib']
+        }
+    }
+    ndkVersion '21.3.6528147'
 
     defaultConfig {
         externalNativeBuild {
@@ -122,6 +128,8 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
 
     implementation 'com.android.billingclient:billing:2.2.0'
+
+    implementation 'com.leia:leiasdk:4.2.1'
 }
 
 def getVersion() {
