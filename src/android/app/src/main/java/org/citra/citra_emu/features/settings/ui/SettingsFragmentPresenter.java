@@ -313,6 +313,7 @@ public final class SettingsFragmentPresenter {
         Setting buttonR = controlsSection.getSetting(SettingsFile.KEY_BUTTON_R);
         Setting buttonZL = controlsSection.getSetting(SettingsFile.KEY_BUTTON_ZL);
         Setting buttonZR = controlsSection.getSetting(SettingsFile.KEY_BUTTON_ZR);
+        Setting Swap_Screen = controlsSection.getSetting(SettingsFile.KEY_SWAP_SCREEN);
 
         sl.add(new HeaderSetting(null, null, R.string.generic_buttons, 0));
         sl.add(new InputBindingSetting(SettingsFile.KEY_BUTTON_A, Settings.SECTION_CONTROLS, R.string.button_a, buttonA));
@@ -321,6 +322,7 @@ public final class SettingsFragmentPresenter {
         sl.add(new InputBindingSetting(SettingsFile.KEY_BUTTON_Y, Settings.SECTION_CONTROLS, R.string.button_y, buttonY));
         sl.add(new InputBindingSetting(SettingsFile.KEY_BUTTON_SELECT, Settings.SECTION_CONTROLS, R.string.button_select, buttonSelect));
         sl.add(new InputBindingSetting(SettingsFile.KEY_BUTTON_START, Settings.SECTION_CONTROLS, R.string.button_start, buttonStart));
+        sl.add(new InputBindingSetting(SettingsFile.KEY_SWAP_SCREEN, Settings.SECTION_CONTROLS, R.string.swap_screen, Swap_Screen));
 
         sl.add(new HeaderSetting(null, null, R.string.controller_circlepad, 0));
         sl.add(new InputBindingSetting(SettingsFile.KEY_CIRCLEPAD_AXIS_VERTICAL, Settings.SECTION_CONTROLS, R.string.controller_axis_vertical, circlepadAxisVert));

@@ -79,7 +79,7 @@ enum Values {
     Select,
     Debug,
     Gpio14,
-
+    Swap_Screen,
     ZL,
     ZR,
 
@@ -118,6 +118,7 @@ static const std::array<const char*, NumButtons> mapping = {{
     "button_zl",
     "button_zr",
     "button_home",
+    "swap_screen",
 }};
 } // namespace NativeButton
 

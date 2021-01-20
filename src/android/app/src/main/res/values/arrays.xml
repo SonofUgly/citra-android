@@ -102,6 +102,7 @@
         <item>D-Pad</item>
         <item>Circle Pad</item>
         <item>C Stick</item>
+        <item>Swap Screen</item>
     </string-array>
 
     <string-array name="cameraImageSourceNames">

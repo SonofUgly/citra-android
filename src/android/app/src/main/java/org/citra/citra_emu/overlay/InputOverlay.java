@@ -707,6 +707,10 @@ public final class InputOverlay extends SurfaceView implements OnTouchListener {
             overlayJoysticks.add(initializeOverlayJoystick(getContext(), R.drawable.stick_c_range,
                     R.drawable.stick_c, R.drawable.stick_c_pressed, ButtonType.STICK_C, orientation));
         }
+        if (mPreferences.getBoolean("buttonToggle13", true)) {
+            overlayButtons.add(initializeOverlayButton(getContext(), R.drawable.swap_screen,
+                    R.drawable.swap_screen_pressed, ButtonType.SWAP_SCREEN, orientation));
+        }
     }
 
     public void refreshControls() {
@@ -815,6 +819,8 @@ public final class InputOverlay extends SurfaceView implements OnTouchListener {
         sPrefsEditor.putFloat(ButtonType.STICK_C + "-Y", (((float) res.getInteger(R.integer.N3DS_STICK_C_Y) / 1000) * maxY));
         sPrefsEditor.putFloat(ButtonType.STICK_LEFT + "-X", (((float) res.getInteger(R.integer.N3DS_STICK_MAIN_X) / 1000) * maxX));
         sPrefsEditor.putFloat(ButtonType.STICK_LEFT + "-Y", (((float) res.getInteger(R.integer.N3DS_STICK_MAIN_Y) / 1000) * maxY));
+        sPrefsEditor.putFloat(ButtonType.SWAP_SCREEN + "-X", (((float) res.getInteger(R.integer.SWAP_SCREEN_X) / 1000) * maxX));
+        sPrefsEditor.putFloat(ButtonType.SWAP_SCREEN + "-Y", (((float) res.getInteger(R.integer.SWAP_SCREEN_Y) / 1000) * maxY));
 
         // We want to commit right away, otherwise the overlay could load before this is saved.
         sPrefsEditor.commit();
@@ -867,6 +873,8 @@ public final class InputOverlay extends SurfaceView implements OnTouchListener {
         sPrefsEditor.putFloat(ButtonType.STICK_C + portrait + "-Y", (((float) res.getInteger(R.integer.N3DS_STICK_C_PORTRAIT_Y) / 1000) * maxY));
         sPrefsEditor.putFloat(ButtonType.STICK_LEFT + portrait + "-X", (((float) res.getInteger(R.integer.N3DS_STICK_MAIN_PORTRAIT_X) / 1000) * maxX));
         sPrefsEditor.putFloat(ButtonType.STICK_LEFT + portrait + "-Y", (((float) res.getInteger(R.integer.N3DS_STICK_MAIN_PORTRAIT_Y) / 1000) * maxY));
+        sPrefsEditor.putFloat(ButtonType.SWAP_SCREEN + portrait + "-X", (((float) res.getInteger(R.integer.SWAP_SCREEN_PORTRAIT_X) / 1000) * maxX));
+        sPrefsEditor.putFloat(ButtonType.SWAP_SCREEN + portrait + "-Y", (((float) res.getInteger(R.integer.SWAP_SCREEN_PORTRAIT_Y) / 1000) * maxY));
 
         // We want to commit right away, otherwise the overlay could load before this is saved.
         sPrefsEditor.commit();

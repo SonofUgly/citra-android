@@ -21,6 +21,7 @@
 #include "jni/config.h"
 #include "jni/default_ini.h"
 #include "jni/input_manager.h"
+#include "../../../../../core/settings.h"
 
 Config::Config() {
     // TODO: Don't hardcode the path; let the frontend decide where to put the config files.
@@ -59,7 +60,7 @@ static const std::array<int, Settings::NativeButton::NumButtons> default_buttons
     InputManager::N3DS_BUTTON_START, InputManager::N3DS_BUTTON_SELECT,
     InputManager::N3DS_BUTTON_DEBUG, InputManager::N3DS_BUTTON_GPIO14,
     InputManager::N3DS_BUTTON_ZL,    InputManager::N3DS_BUTTON_ZR,
-    InputManager::N3DS_BUTTON_HOME,
+    InputManager::N3DS_BUTTON_HOME,  InputManager::SWAP_SCREEN,
 };
 
 static const std::array<int, Settings::NativeAnalog::NumAnalogs> default_analogs{{
@@ -102,7 +103,6 @@ void Config::ReadValues() {
     Settings::values.current_input_profile.udp_input_port =
         static_cast<u16>(sdl2_config->GetInteger("Controls", "udp_input_port",
                                                  InputCommon::CemuhookUDP::DEFAULT_PORT));
-
     // Core
     Settings::values.use_cpu_jit = sdl2_config->GetBoolean("Core", "use_cpu_jit", true);
     Settings::values.cpu_clock_percentage =

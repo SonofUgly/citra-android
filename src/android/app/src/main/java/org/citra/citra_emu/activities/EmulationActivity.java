@@ -570,7 +570,7 @@ public final class EmulationActivity extends AppCompatActivity {
 
     private void toggleControls() {
         final SharedPreferences.Editor editor = mPreferences.edit();
-        boolean[] enabledButtons = new boolean[14];
+        boolean[] enabledButtons = new boolean[15];
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.emulation_toggle_controls);
 
@@ -581,6 +581,7 @@ public final class EmulationActivity extends AppCompatActivity {
                 case 6: // ZL
                 case 7: // ZR
                 case 12: // C-stick
+                case 15: // Swap Screen
                     defaultValue = false;
                     break;
             }

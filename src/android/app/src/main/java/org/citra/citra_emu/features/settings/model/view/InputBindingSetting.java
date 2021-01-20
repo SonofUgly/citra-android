@@ -140,6 +140,8 @@ public final class InputBindingSetting extends SettingsItem {
                 return NativeLibrary.ButtonType.DPAD_LEFT;
             case SettingsFile.KEY_BUTTON_RIGHT:
                 return NativeLibrary.ButtonType.DPAD_RIGHT;
+            case SettingsFile.KEY_SWAP_SCREEN:
+                return NativeLibrary.ButtonType.SWAP_SCREEN;
         }
         return -1;
     }
@@ -177,6 +179,8 @@ public final class InputBindingSetting extends SettingsItem {
                 return SettingsFile.KEY_BUTTON_LEFT;
             case NativeLibrary.ButtonType.DPAD_RIGHT:
                 return SettingsFile.KEY_BUTTON_RIGHT;
+            case NativeLibrary.ButtonType.SWAP_SCREEN:
+                return SettingsFile.KEY_SWAP_SCREEN;
         }
         return "";
     }

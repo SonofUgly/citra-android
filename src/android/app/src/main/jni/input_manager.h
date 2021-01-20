@@ -40,7 +40,8 @@ enum ButtonType {
     N3DS_TRIGGER_L = 773,
     N3DS_TRIGGER_R = 774,
     N3DS_BUTTON_DEBUG = 781,
-    N3DS_BUTTON_GPIO14 = 782
+    N3DS_BUTTON_GPIO14 = 782,
+    SWAP_SCREEN = 783
 };
 
 class ButtonList;
