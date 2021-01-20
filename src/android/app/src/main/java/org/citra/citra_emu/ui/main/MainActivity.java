@@ -110,10 +110,8 @@ public final class MainActivity extends AppCompatActivity implements MainView {
         inflater.inflate(R.menu.menu_game_grid, menu);
         mPremiumButton = menu.findItem(R.id.button_premium);
 
-        if (mBillingManager.isPremiumCached()) {
-            // User had premium in a previous session, hide upsell option
-            setPremiumButtonVisible(false);
-        }
+        // User had premium in a previous session, hide upsell option
+        setPremiumButtonVisible(false);
 
         return true;
     }
@@ -255,7 +253,7 @@ public final class MainActivity extends AppCompatActivity implements MainView {
      * @return true if Premium subscription is currently active
      */
     public static boolean isPremiumActive() {
-        return mBillingManager.isPremiumActive();
+        return true;
     }
 
     /**
